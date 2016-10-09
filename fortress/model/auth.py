@@ -14,7 +14,7 @@ from hashlib import sha256
 __all__ = ['User', 'Group', 'Permission']
 
 from sqlalchemy import Table, ForeignKey, Column
-from sqlalchemy.types import Unicode, Integer, DateTime
+from sqlalchemy.types import Unicode, Integer, DateTime, Text
 from sqlalchemy.orm import relation, synonym
 
 from fortress.model import DeclarativeBase, metadata, DBSession
@@ -88,6 +88,7 @@ class User(DeclarativeBase):
     email_address = Column(Unicode(255), unique=True, nullable=False)
     display_name = Column(Unicode(255))
     _password = Column('password', Unicode(128))
+    ssh_pub_key = Column(Text, nullable=True)
     created = Column(DateTime, default=datetime.now)
 
     def __repr__(self):
