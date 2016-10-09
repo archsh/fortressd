@@ -1,8 +1,16 @@
+Fortressd
+========
+
 This file is for you to describe the fortressd application. Typically
 you would include information such as the information below:
 
+About fortressd
+--------------
+
+
+
 Installation and Setup
-======================
+----------------------
 
 Install ``fortressd`` using the setup.py script::
 
@@ -22,3 +30,9 @@ While developing you may want the server to reload after changes in package file
     $ gearbox serve --reload --debug
 
 Then you are ready to go.
+
+
+Quick Start
+-----------
+
+
