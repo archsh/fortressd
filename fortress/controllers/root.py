@@ -38,7 +38,7 @@ class RootController(BaseController):
     error = ErrorController()
 
     def _before(self, *args, **kw):
-        tmpl_context.project_name = "fortress"
+        tmpl_context.project_name = "Fortressd"
 
     @expose('fortress.templates.index')
     def index(self):
