@@ -1,0 +1,4 @@
+recursive-include fortress/public *
+include fortress/public/favicon.ico
+recursive-include fortress/i18n *
+recursive-include fortress/templates *
