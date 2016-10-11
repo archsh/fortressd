@@ -14,8 +14,8 @@ class SecureController(BaseController):
 
     # The predicate that must be met for all the actions in this controller:
     allow_only = has_permission(
-        'manage',
-        msg=l_('Only for people with the "manage" permission')
+        'administration',
+        msg=l_('Only for people with the "administration" permission')
     )
 
     @expose('fortress.templates.index')

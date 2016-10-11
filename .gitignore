@@ -47,3 +47,4 @@ run/
 build/
 tg2env/
 logs/*.log
+.eggs/

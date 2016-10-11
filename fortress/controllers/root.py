@@ -19,6 +19,10 @@ from fortress.controllers.fortressd import AuthorizationController, Infrastructu
 __all__ = ['RootController']
 
 
+class FortressAdminConfig(TGAdminConfig):
+    allow_only = predicates.in_group('administrators')
+
+
 class RootController(BaseController):
     """
     The root controller for the fortressd application.
@@ -34,7 +38,7 @@ class RootController(BaseController):
 
     """
     secc = SecureController()
-    admin = AdminController(model, DBSession, config_type=TGAdminConfig)
+    admin = AdminController(model, DBSession, config_type=FortressAdminConfig)
 
     error = ErrorController()
     logs = LoggingController()
