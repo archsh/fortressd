@@ -14,6 +14,7 @@ from tgext.admin.controller import AdminController
 
 from fortress.lib.base import BaseController
 from fortress.controllers.error import ErrorController
+from fortress.controllers.fortressd import AuthorizationController, InfrastructureController, LoggingController, UserController
 
 __all__ = ['RootController']
 
@@ -36,9 +37,13 @@ class RootController(BaseController):
     admin = AdminController(model, DBSession, config_type=TGAdminConfig)
 
     error = ErrorController()
+    logs = LoggingController()
+    authorizations = AuthorizationController()
+    infrastructures = InfrastructureController()
+    users = UserController()
 
     def _before(self, *args, **kw):
-        tmpl_context.project_name = "Fortressd"
+        tmpl_context.project_name = "FORTRESSD"
 
     @expose('fortress.templates.index')
     def index(self):

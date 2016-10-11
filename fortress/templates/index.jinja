@@ -10,7 +10,7 @@ Welcome to TurboGears 2.3, standing on the shoulders of giants, since 2007
     <div class="col-md-12">
       <div class="jumbotron">
           <img src="{{tg.url('/img/fortressd_logo_big.png')}}" alt="Fortressd"/>
-        <h1>Welcome to Fortressd <small>v1.0</small></h1>
+        <h1>Welcome to {{tmpl_context.project_name|default('FORTRESSD')}} <small>v1.0</small></h1>
         <p>If you see this page it means your installation was successful!</p>
         <p></p>
         <p>
