@@ -1,11 +1,11 @@
 # -*- coding: utf-8 -*-
 """Infrastructures model module."""
 from sqlalchemy import *
-from sqlalchemy import Table, ForeignKey, Column
-from sqlalchemy.types import Integer, Unicode, DateTime, LargeBinary, SmallInteger
+from sqlalchemy import ForeignKey, Column
 from sqlalchemy.orm import relationship, backref
+from sqlalchemy.types import Integer, Unicode, SmallInteger
 
-from fortress.model import DeclarativeBase, metadata, DBSession
+from fortress.model import DeclarativeBase
 
 
 class DataCenter(DeclarativeBase):
@@ -23,17 +23,31 @@ class DataServer(DeclarativeBase):
     # { Columns
     id = Column(Integer, primary_key=True)
     name = Column(Unicode(32), nullable=False)
-    ipaddr = Column(String(24), nullable=False)
+    main_ipaddr = Column(String(24), nullable=False)  # Main IP Address
+    ext_ipaddrs = Column(String(256), nullable=True)  # External IP Addresses separated by ','.
     dc_id = Column(Integer,
                    ForeignKey('infra_data_centers.id', onupdate="CASCADE", ondelete="CASCADE"),
                    index=True)
-    port = Column(SmallInteger, default=22)
-    users = Column(String(256), default="root")  # user list on server separated by ','
+    ssh_port = Column(SmallInteger, default=22)
+    mapped_port = Column(SmallInteger, default=0)
+    default_user = Column(String(32), default="root")
     description = Column(Unicode(256), nullable=True)
     # }
-    data_center = relationship('DataCenter',
-                               uselist=False,
-                               backref=backref("servers", cascade='all, delete-orphan'))
+    center = relationship('DataCenter',
+                          uselist=False,
+                          backref=backref("servers", cascade='all, delete-orphan'))
 
 
-__all__ = ['DataCenter', 'DataServer']
+class ServerUser(DeclarativeBase):
+    __tablename__ = 'infra_data_server_users'
+    # { Columns
+    id = Column(Integer, primary_key=True)
+    name = Column(String(32), nullable=False)
+    server_id = Column(Integer, ForeignKey('infra_data_servers.id', onupdate="CASCADE", ondelete="CASCADE"), index=True)
+    # }
+    server = relationship('DataServer',
+                          uselist=False,
+                          backref=backref("users", cascade='all, delete-orphan'))
+
+
+__all__ = ['DataCenter', 'DataServer', 'ServerUser']

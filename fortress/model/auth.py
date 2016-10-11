@@ -11,8 +11,6 @@ though.
 import os
 from datetime import datetime
 from hashlib import sha256
-__all__ = ['User', 'Group', 'Permission']
-
 from sqlalchemy import Table, ForeignKey, Column
 from sqlalchemy.types import Unicode, Integer, DateTime, Text
 from sqlalchemy.orm import relation, synonym
@@ -22,14 +20,14 @@ from fortress.model import DeclarativeBase, metadata, DBSession
 
 # This is the association table for the many-to-many relationship between
 # groups and permissions.
-group_permission_table = Table('tg_group_permission', metadata,
+group_permission_table = Table('fort_group_permission', metadata,
                                Column('group_id', Integer,
-                                      ForeignKey('tg_group.group_id',
+                                      ForeignKey('fort_groups.group_id',
                                                  onupdate="CASCADE",
                                                  ondelete="CASCADE"),
                                       primary_key=True),
                                Column('permission_id', Integer,
-                                      ForeignKey('tg_permission.permission_id',
+                                      ForeignKey('fort_permissions.permission_id',
                                                  onupdate="CASCADE",
                                                  ondelete="CASCADE"),
                                       primary_key=True))
@@ -37,14 +35,14 @@ group_permission_table = Table('tg_group_permission', metadata,
 
 # This is the association table for the many-to-many relationship between
 # groups and members - this is, the memberships.
-user_group_table = Table('tg_user_group', metadata,
+user_group_table = Table('fort_user_group', metadata,
                          Column('user_id', Integer,
-                                ForeignKey('tg_user.user_id',
+                                ForeignKey('fort_users.user_id',
                                            onupdate="CASCADE",
                                            ondelete="CASCADE"),
                                 primary_key=True),
                          Column('group_id', Integer,
-                                ForeignKey('tg_group.group_id',
+                                ForeignKey('fort_groups.group_id',
                                            onupdate="CASCADE",
                                            ondelete="CASCADE"),
                                 primary_key=True))
@@ -58,7 +56,7 @@ class Group(DeclarativeBase):
 
     """
 
-    __tablename__ = 'tg_group'
+    __tablename__ = 'fort_groups'
 
     group_id = Column(Integer, autoincrement=True, primary_key=True)
     group_name = Column(Unicode(16), unique=True, nullable=False)
@@ -81,7 +79,7 @@ class User(DeclarativeBase):
     least the ``user_name`` column.
 
     """
-    __tablename__ = 'tg_user'
+    __tablename__ = 'fort_users'
 
     user_id = Column(Integer, autoincrement=True, primary_key=True)
     user_name = Column(Unicode(16), unique=True, nullable=False)
@@ -174,7 +172,7 @@ class Permission(DeclarativeBase):
 
     """
 
-    __tablename__ = 'tg_permission'
+    __tablename__ = 'fort_permissions'
 
     permission_id = Column(Integer, autoincrement=True, primary_key=True)
     permission_name = Column(Unicode(63), unique=True, nullable=False)
@@ -188,3 +186,6 @@ class Permission(DeclarativeBase):
 
     def __unicode__(self):
         return self.permission_name
+
+
+__all__ = ['User', 'Group', 'Permission']

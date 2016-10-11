@@ -1,4 +1,4 @@
-
+import sys
 
 TEMPLATE = '''[program:ssh_%(loc)s_%(suffix)03d]
 command=sshpass -p 'Aipu@admin#@!' ssh -N -L0.0.0.0:4%(loc)d%(suffix)03d:%(ip)s:%(port)d tvsee@localhost -p30022
@@ -10,6 +10,7 @@ CHENGDU_SERVERS = '''10.235.1.26
 10.255.199.11
 10.255.199.12
 10.255.199.13
+10.255.199.16
 10.255.199.17
 10.255.199.18
 10.255.199.21
@@ -159,12 +160,11 @@ DATA_CENTERS = {
 
 # DATA_CENTERS = { "TEST": {"id": 1, "list": TEST_SERVERS.split("\n")} }
 
-import sys
-
 
 def Generate_Server_Tunnel(loc_idx, server_ip, port):
     suffix = int(server_ip.split(".")[-1])
     return TEMPLATE % dict(loc=loc_idx, ip=server_ip, port=port, suffix=suffix)
+
 
 if __name__ == '__main__':
     print("#####################################################################")

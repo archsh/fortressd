@@ -58,5 +58,8 @@ def init_model(engine):
 
 # Import your model modules here.
 from fortress.model.auth import User, Group, Permission
+from fortress.model.infrastructures import DataCenter, DataServer
 
-__all__ = ('User', 'Group', 'Permission')
+__all__ = ('User', 'Group', 'Permission',
+           'DataCenter', 'DataServer',
+           )
