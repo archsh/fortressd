@@ -6,7 +6,7 @@ This file complements development/deployment.ini.
 
 """
 from tg.configuration import AppConfig
-
+import logging
 import fortress
 from fortress import model, lib
 
@@ -53,7 +53,7 @@ base_config.sa_auth.cookie_secret = "996ac62d-b6ca-45cc-9982-2db41f2a33bd"
 base_config.sa_auth.user_class = model.User
 
 from tg.configuration.auth import TGAuthMetadata
-
+log = logging.getLogger(__name__)
 
 # This tells to TurboGears how to retrieve the data for your user
 class ApplicationAuthMetadata(TGAuthMetadata):
@@ -61,6 +61,7 @@ class ApplicationAuthMetadata(TGAuthMetadata):
         self.sa_auth = sa_auth
 
     def authenticate(self, environ, identity):
+        # log.debug("ApplicationAuthMetadata.authenticate: identity: %s ", identity)
         login = identity['login']
         user = self.sa_auth.dbsession.query(self.sa_auth.user_class).filter_by(
             user_name=login

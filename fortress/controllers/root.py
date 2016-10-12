@@ -11,11 +11,11 @@ from fortress.controllers.secure import SecureController
 from fortress.model import DBSession
 from tgext.admin.tgadminconfig import BootstrapTGAdminConfig as TGAdminConfig
 from tgext.admin.controller import AdminController
-
 from fortress.lib.base import BaseController
 from fortress.controllers.error import ErrorController
 from fortress.controllers.fortressd import AuthorizationController, InfrastructureController, LoggingController, UserController
-
+import logging
+log = logging.getLogger(__name__)
 __all__ = ['RootController']
 
 
@@ -52,7 +52,9 @@ class RootController(BaseController):
     @expose('fortress.templates.index')
     def index(self):
         """Handle the front-page."""
+        # log.debug("Default Root Index .................")
         return dict(page='index')
+
     @expose('fortress.templates.about')
     def about(self):
         """Handle the 'about' page."""
@@ -71,17 +73,18 @@ class RootController(BaseController):
         for a data page and a display page.
         """
         return dict(page='data', params=kw)
-    @expose('fortress.templates.index')
-    @require(predicates.has_permission('manage', msg=l_('Only for managers')))
-    def manage_permission_only(self, **kw):
-        """Illustrate how a page for managers only works."""
-        return dict(page='managers stuff')
 
     @expose('fortress.templates.index')
-    @require(predicates.is_user('editor', msg=l_('Only for the editor')))
-    def editor_user_only(self, **kw):
+    @require(predicates.has_permission('administration', msg=l_('Only for administrators')))
+    def admin_permission_only(self, **kw):
+        """Illustrate how a page for managers only works."""
+        return dict(page='administrator stuff')
+
+    @expose('fortress.templates.index')
+    @require(predicates.is_user('operate', msg=l_('Only for the operators')))
+    def operator_user_only(self, **kw):
         """Illustrate how a page exclusive for the editor works."""
-        return dict(page='editor stuff')
+        return dict(page='operator stuff')
 
     @expose('fortress.templates.login')
     def login(self, came_from=lurl('/'), failure=None, login=''):
@@ -110,8 +113,10 @@ class RootController(BaseController):
             login_counter = request.environ.get('repoze.who.logins', 0) + 1
             redirect('/login',
                      params=dict(came_from=came_from, __logins=login_counter))
-        userid = request.identity['repoze.who.userid']
-        flash(_('Welcome back, %s!') % userid)
+        # userid = request.identity['repoze.who.userid']
+        user = request.identity['user']
+        # log.debug(">>> request.identity: %s", request.identity.items())
+        flash(_('Welcome back, %s!') % user.display_name)
 
         # Do not use tg.redirect with tg.url as it will add the mountpoint
         # of the application twice.

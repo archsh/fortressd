@@ -1,18 +1,23 @@
 {% extends "master.jinja" %}
 
 {% block master_title %}
-Welcome to {{tmpl_context.project_name|default('FORTRESSD')}}
+    Welcome to {{ tmpl_context.project_name|default('FORTRESSD') }}
 {% endblock %}
 
 
 {% block contents %}
-  <div class="row">
-    <div class="col-md-12">
-      <div class="jumbotron">
-          <img src="{{tg.url('/img/fortressd_logo_big.png')}}" alt="Fortressd"/>
-        <h1>Infrastructures</h1>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="media">
+                <div class="media-left">
+                    <img class="media-object media-middle" src="{{ tg.url('/img/fortressd_logo_big.png') }}"
+                         alt="Fortressd" height="120" width="120"/>
+                </div>
+                <div class="media-body">
+                    <h2>Infrastructures</h2>
 
-      </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 {% endblock %}

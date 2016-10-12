@@ -1,45 +1,84 @@
 {% extends "master.jinja" %}
 
 {% block master_title %}
-Welcome to {{tmpl_context.project_name|default('FORTRESSD')}}
+    Welcome to {{ tmpl_context.project_name|default('FORTRESSD') }}
 {% endblock %}
 
 
 {% block contents %}
-  <div class="row">
-    <div class="col-md-12">
-      <div class="jumbotron">
-          <img src="{{tg.url('/img/fortressd_logo_big.png')}}" alt="Fortressd"/>
-        <h1>Welcome to {{tmpl_context.project_name|default('FORTRESSD')}} <small>v1.0</small></h1>
-        <p>If you see this page it means your installation was successful!</p>
-        <p></p>
-        <p>
-          <a class="btn btn-primary pull-right" href="https://github.com/archsh/fortressd" target="_blank">
-            {{h.icon('book')}} Learn more
-          </a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-4">
-      <h3>Code your data model</h3>
-      <p> Design your data <code>model</code>, Create the database, and Add some bootstrap data.</p>
-    </div>
-
-    <div class="col-md-4">
-      <h3>Design your URL architecture</h3>
-      <p> Decide your URLs, Program your <code>controller</code> methods, Design your
-        <code>templates</code>, and place some static files (CSS and/or Javascript). </p>
+    <div class="row">
+    <div class="col-md-12 jumbotron">
+        <div class="media">
+            <div class="media-left">
+                <img class="media-object media-middle" src="{{ tg.url('/img/fortressd_logo_big.png') }}"
+                     alt="Fortressd" height="120" width="120"/>
+            </div>
+            <div class="media-body">
+                <h2>Welcome to {{ tmpl_context.project_name|default('FORTRESSD') }}
+                    <small>v1.0</small>
+                </h2>
+                <p>If you see this page it means your installation was successful!</p>
+                <p></p>
+                <p>
+                    <a class="btn btn-primary pull-right" href="https://github.com/archsh/fortressd"
+                       target="_blank">
+                        {{ h.icon('book') }} Learn more
+                    </a>
+                </p>
+            </div>
+        </div>
     </div>
 
-    <div class="col-md-4">
-      <h3>Distribute your app</h3>
-      <p> Test your source, Generate project documents, Build a distribution.</p>
-    </div>
-  </div>
+    <div class="row">
+        <div class="col-md-3">
+            <h4><i class="fa fa-server"></i> Infrastructure management</h4>
+            <ul class="">
+                <li class="">Cras justo odio</li>
+                <li class="">Dapibus ac facilisis in</li>
+                <li class="">Morbi leo risus</li>
+                <li class="">Porta ac consectetur ac</li>
+                <li class="">Vestibulum at eros</li>
+            </ul>
+        </div>
 
-  <em class="pull-right small"> Thank you for choosing {{tmpl_context.project_name|default('FORTRESSD')}}.</em>
+        <div class="col-md-3">
+            <h4><i class="fa fa-users>"></i> User and group management</h4>
+            <ul class="">
+                <li class="">Cras justo odio</li>
+                <li class="">Dapibus ac facilisis in</li>
+                <li class="">Morbi leo risus</li>
+                <li class="">Porta ac consectetur ac</li>
+                <li class="">Vestibulum at eros</li>
+            </ul>
+        </div>
+
+        <div class="col-md-3">
+            <h4><i class="fa fa-key"></i> Real-time authorization</h4>
+            <ul class="">
+                <li class="">Cras justo odio</li>
+                <li class="">Dapibus ac facilisis in</li>
+                <li class="">Morbi leo risus</li>
+                <li class="">Porta ac consectetur ac</li>
+                <li class="">Vestibulum at eros</li>
+            </ul>
+        </div>
+        <div class="col-md-3">
+            <h4><i class="fa fa-file-text"></i> Full logging support</h4>
+            <ul class="">
+                <li class="">Cras justo odio</li>
+                <li class="">Dapibus ac facilisis in</li>
+                <li class="">Morbi leo risus</li>
+                <li class="">Porta ac consectetur ac</li>
+                <li class="">Vestibulum at eros</li>
+            </ul>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <em class="pull-right small"> Thank you for
+                choosing {{ tmpl_context.project_name|default('FORTRESSD') }}.</em>
+        </div>
+
+    </div>
 
 {% endblock %}
