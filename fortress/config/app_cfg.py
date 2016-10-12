@@ -33,7 +33,7 @@ base_config.renderers.append('json')
 # Set the default renderer
 base_config.renderers.append('jinja')
 base_config.jinja_extensions = ['jinja2.ext.with_']
-base_config.renderers.append('kajiki')
+# base_config.renderers.append('kajiki')
 
 base_config.default_renderer = 'jinja'
 

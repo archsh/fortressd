@@ -47,7 +47,7 @@ class RootController(BaseController):
     users = UserController()
 
     def _before(self, *args, **kw):
-        tmpl_context.project_name = "FORTRESSD"
+        tmpl_context.project_name = _("FORTRESSD")
 
     @expose('fortress.templates.index')
     def index(self):

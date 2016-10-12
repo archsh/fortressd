@@ -12,11 +12,11 @@
                  alt="Fortressd" height="120" width="120"/>
         </div>
         <div class="media-body">
-            <h2>About {{ tmpl_context.project_name|default('FORTRESSD') }}
+            <h2>{% trans %}About {{ tmpl_context.project_name|default('FORTRESSD') }} {% endtrans %}
                 <small>v1.0</small>
             </h2>
-            <p>This file is for you to describe the fortressd application. Typically
-                you would include information such as the information below:</p>
+            <p>{% blocktrans %}This file is for you to describe the fortressd application. Typically
+                you would include information such as the information below:{% endblocktrans %}</p>
         </div>
     </div>
 
