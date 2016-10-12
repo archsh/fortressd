@@ -17,7 +17,7 @@ class UserController(BaseController):
     def _before(self, *args, **kw):
         tmpl_context.page_name = "Fortressd"
 
-    @expose('fortress.templates.index')
+    @expose('fortress.templates.users.index')
     def index(self):
         """Handle the front-page."""
         return dict(page='index')

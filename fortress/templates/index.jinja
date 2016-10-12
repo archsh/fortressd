@@ -1,7 +1,7 @@
 {% extends "master.jinja" %}
 
 {% block master_title %}
-Welcome to TurboGears 2.3, standing on the shoulders of giants, since 2007
+Welcome to {{tmpl_context.project_name|default('FORTRESSD')}}
 {% endblock %}
 
 
@@ -40,6 +40,6 @@ Welcome to TurboGears 2.3, standing on the shoulders of giants, since 2007
     </div>
   </div>
 
-  <em class="pull-right small"> Thank you for choosing TurboGears.</em>
+  <em class="pull-right small"> Thank you for choosing {{tmpl_context.project_name|default('FORTRESSD')}}.</em>
 
 {% endblock %}
