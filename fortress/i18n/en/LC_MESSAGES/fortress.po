@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fortressd 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-12 15:09+0800\n"
+"POT-Creation-Date: 2016-10-12 15:31+0800\n"
 "PO-Revision-Date: 2016-10-12 15:15+0800\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language: en\n"
@@ -53,57 +53,5 @@ msgstr ""
 
 #: fortress/controllers/secure.py:24
 msgid "Secure Controller here"
-msgstr ""
-
-#: fortress/templates/master.xhtml:8
-msgid "Your generic title goes here"
-msgstr ""
-
-#: fortress/templates/master.xhtml:20
-msgid "Toggle navigation"
-msgstr ""
-
-#: fortress/templates/master.xhtml:33
-msgid "Welcome"
-msgstr ""
-
-#: fortress/templates/master.xhtml:36
-msgid "About"
-msgstr ""
-
-#: fortress/templates/master.xhtml:37
-msgid "Serving"
-msgstr ""
-
-#: fortress/templates/master.xhtml:38
-msgid "                Data"
-msgstr ""
-
-#: fortress/templates/master.xhtml:39
-msgid "WSGI"
-msgstr ""
-
-#: fortress/templates/master.xhtml:40
-msgid "                Environment"
-msgstr ""
-
-#: fortress/templates/master.xhtml:43
-msgid "Login"
-msgstr ""
-
-#: fortress/templates/master.xhtml:44
-msgid "Logout"
-msgstr ""
-
-#: fortress/templates/master.xhtml:45
-msgid "Admin"
-msgstr ""
-
-#: fortress/templates/master.xhtml:70
-msgid "Copyright "
-msgstr ""
-
-#: fortress/templates/master.xhtml:70
-msgid "©"
 msgstr ""
 
