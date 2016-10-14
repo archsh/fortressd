@@ -9,6 +9,9 @@ from tg.configuration import AppConfig
 import logging
 import fortress
 from fortress import model, lib
+from tg.configuration.auth import TGAuthMetadata
+
+log = logging.getLogger(__name__)
 
 base_config = AppConfig()
 base_config.renderers = []
@@ -52,8 +55,6 @@ base_config.sa_auth.cookie_secret = "996ac62d-b6ca-45cc-9982-2db41f2a33bd"
 # what is the class you want to use to search for users in the database
 base_config.sa_auth.user_class = model.User
 
-from tg.configuration.auth import TGAuthMetadata
-log = logging.getLogger(__name__)
 
 # This tells to TurboGears how to retrieve the data for your user
 class ApplicationAuthMetadata(TGAuthMetadata):

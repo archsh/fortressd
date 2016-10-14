@@ -61,7 +61,7 @@ setup(
     description='',
     author='Mingcai SHEN',
     author_email='archsh@gmail.com',
-    url='https://github.com/extvos/fortressd',
+    url='https://github.com/archsh/fortressd',
     packages=find_packages(exclude=['ez_setup']),
     install_requires=install_requires,
     include_package_data=True,
