@@ -1,8 +1,71 @@
 {% extends "management/master.jinja" %}
-{% block page_content %}
+{% block contents %}
         <div class="row">
-            <div class="col-md-12">
-                <h1>Management</h1>
+            <div class="col-lg-4 col-md-4">
+        <div class="panel panel-warning">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-folder fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">{{0}}</div>
+                        <div>Data Centers</div>
+                    </div>
+                </div>
             </div>
+            <a href="#/meta/channels">
+                <div class="panel-footer">
+                    <span class="pull-left">Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-film fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">{{0}}</div>
+                        <div>Servers</div>
+                    </div>
+                </div>
+            </div>
+            <a href="#/meta/albums">
+                <div class="panel-footer">
+                    <span class="pull-left">Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div class="col-lg-4 col-md-4">
+        <div class="panel panel-success">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-xs-3">
+                        <i class="fa fa-list fa-5x"></i>
+                    </div>
+                    <div class="col-xs-9 text-right">
+                        <div class="huge">{{0}}</div>
+                        <div>Users</div>
+                    </div>
+                </div>
+            </div>
+            <a href="#/meta/series">
+                <div class="panel-footer">
+                    <span class="pull-left">Details</span>
+                    <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                    <div class="clearfix"></div>
+                </div>
+            </a>
+        </div>
+    </div>
         </div>
 {% endblock %}
