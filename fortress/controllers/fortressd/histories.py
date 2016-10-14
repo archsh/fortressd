@@ -11,13 +11,13 @@ from fortress import model
 from fortress.lib.base import BaseController
 
 
-class LoggingController(BaseController):
+class HistoryController(BaseController):
     # Uncomment this line if your controller requires an authenticated user
     # allow_only = predicates.not_anonymous()
     def _before(self, *args, **kw):
         tmpl_context.page_name = "Fortressd"
 
-    @expose('fortress.templates.logging.index')
+    @expose('fortress.templates.histories.index')
     def index(self):
         """Handle the front-page."""
         return dict(page='index')

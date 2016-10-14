@@ -6,9 +6,9 @@ from sqlalchemy import engine_from_config, pool
 # access to the values within the .ini file in use.
 config = context.config
 
-# Interpret the config file for Python logging.
+# Interpret the config file for Python histories.
 # This line sets up loggers basically.
-# from logging.config import fileConfig
+# from histories.config import fileConfig
 # fileConfig(config.config_file_name)
 
 # add your model's MetaData object here
