@@ -14,17 +14,23 @@
     <link rel="stylesheet" href="{{ tg.url('/bootstrap-3.3.7-dist/css/bootstrap-theme.min.css') }}">
     <!-- font-awesome.min.css -->
     <link rel="stylesheet" href="{{ tg.url('/font-awesome-4.6.3/css/font-awesome.min.css') }}">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="{{ tg.url('/bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
+    <!-- metisMenu-2.5.2 -->
+    <link rel="stylesheet" href="{{ tg.url('/metisMenu-2.5.2/metisMenu.min.css') }}">
     <!-- jQuery -->
     <script src="{{ tg.url('/javascript/jquery.js') }}"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="{{ tg.url('/bootstrap-3.3.7-dist/js/bootstrap.min.js') }}"></script>
+    <!-- metisMenu-2.5.2 -->
+    <script src="{{ tg.url('/metisMenu-2.5.2/metisMenu.min.js') }}"></script>
+    <!-- app js -->
+    <script src="{{ tg.url('/javascript/fortressd.js') }}"></script>
 </head>
 
 <body>
 <!-- Navbar -->
 
 <nav class="navbar navbar-default navbar-fixed-top">
-    <div class="container">
+    <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                     aria-expanded="false" aria-controls="navbar">
@@ -33,7 +39,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ tg.url('') }}">
+            <a class="navbar-brand" href="{{ tg.url('/') }}">
                 <img class="pull-left"  width="16" height="16" src="{{ tg.url('/img/fortressd_logo.png') }}" alt="..."> &nbsp;
                 {{ tmpl_context.project_name|default('FORTRESSD') }}
             </a>
@@ -64,7 +70,7 @@
     </div>
 </nav>
 
-<div class="container">
+<div class="container-fluid">
     <!-- Flash messages -->
     {% with flash=tg.flash_obj.render('flash', use_js=False) %}
         <div class="row">
