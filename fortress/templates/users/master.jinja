@@ -1,9 +1,8 @@
-{% extends "master_sidemenu.jinja" %}
-
-{% block sidemenu %}
-                <li class="sidebar-search">
-                    <h4><i class="fa fa-user"></i> User Profile </h4>
-                </li>
+{% extends "master.jinja" %}
+{% block navbar_brand %}
+    <a href="/users" class="navbar-brand"><i class="fa fa-user"></i> Users </a>
+{% endblock %}
+{% block navbar_menu %}
                 <li>
                     <a href="/profile/change_passwd"><i class="fa fa-key"></i> Change Password</a>
                 </li>

@@ -1,9 +1,8 @@
-{% extends "master_sidemenu.jinja" %}
-
-{% block sidemenu %}
-                <li class="sidebar-search">
-                    <h4><i class="fa fa-legal"></i> Management </h4>
-                </li>
+{% extends "master.jinja" %}
+{% block navbar_brand %}
+    <a href="/management" class="navbar-brand"><i class="fa fa-legal"></i> Management </a>
+{% endblock %}
+{% block navbar_menu %}
                 <li>
                     <a href="/management/data_centers"><i class="fa fa-building"></i> Data Centers</a>
                 </li>

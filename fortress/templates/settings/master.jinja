@@ -1,13 +1,12 @@
-{% extends "master_sidemenu.jinja" %}
-
-{% block sidemenu %}
-                <li class="sidebar-search">
-                    <h4><i class="fa fa-gears"></i> Settings </h4>
-                </li>
-                <li>
-                    <a href="/profile/change_passwd"><i class="fa fa-key"></i> Change Password</a>
-                </li>
-                <li>
-                    <a href="/profile/edit_info"><i class="fa fa-key"></i> Edit Profile</a>
-                </li>
+{% extends "master.jinja" %}
+{% block navbar_brand %}
+    <a href="/settings" class="navbar-brand"><i class="fa fa-gears"></i> Settings</a>
+{% endblock %}
+{% block navbar_menu %}
+    <li>
+        <a href="/profile/change_passwd"><i class="fa fa-key"></i> Change Password</a>
+    </li>
+    <li>
+        <a href="/profile/edit_info"><i class="fa fa-key"></i> Edit Profile</a>
+    </li>
 {% endblock %}

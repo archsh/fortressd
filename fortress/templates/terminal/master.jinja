@@ -1,9 +1,8 @@
-{% extends "master_sidemenu.jinja" %}
-
-{% block sidemenu %}
-                <li class="sidebar-search">
-                    <h4><i class="fa fa-terminal"></i> Terminal </h4>
-                </li>
+{% extends "master.jinja" %}
+{% block navbar_brand %}
+    <a href="/terminal" class="navbar-brand"><i class="fa fa-terminal"></i> Terminal </a>
+{% endblock %}
+{% block navbar_menu %}
                 <li>
                     <a href="/terminal/open?server={{ serverip1 }}"><i class="fa fa-server"></i> 10.255.199.3</a>
                 </li>
