@@ -19,7 +19,9 @@ from fortress.controllers.fortressd import (AuthorizationController,
                                             UserController,
                                             ProfileController,
                                             RequestController,
-                                            TerminalController, )
+                                            TerminalController,
+                                            SettingController,
+                                             ManagementController)
 import logging
 log = logging.getLogger(__name__)
 __all__ = ['RootController']
@@ -51,6 +53,8 @@ class RootController(BaseController):
     request = RequestController()
     history = HistoryController()
     terminal = TerminalController()
+    management = ManagementController()
+    settings = SettingController()
 
     def _before(self, *args, **kw):
         tmpl_context.project_name = _("FORTRESSD")
@@ -66,21 +70,21 @@ class RootController(BaseController):
         """Handle the 'about' page."""
         return dict(page='about')
 
-    @expose('fortress.templates.management.index')
-    @require(predicates.has_permission('administration', msg=l_('Only for administrators')))
-    def management(self):
-        """This method showcases TG's access to the wsgi environment."""
-        return dict(page='management', environment=request.environ)
-
-
-    @expose('fortress.templates.settings.index')
-    @require(predicates.has_permission('administration', msg=l_('Only for administrators')))
-    def settings(self, **kw):
-        """
-        This method showcases how you can use the same controller
-        for a data page and a display page.
-        """
-        return dict(page='settings', params=kw)
+    # @expose('fortress.templates.management.index')
+    # @require(predicates.has_permission('administration', msg=l_('Only for administrators')))
+    # def management(self):
+    #     """This method showcases TG's access to the wsgi environment."""
+    #     return dict(page='management', environment=request.environ)
+    #
+    #
+    # @expose('fortress.templates.settings.index')
+    # @require(predicates.has_permission('administration', msg=l_('Only for administrators')))
+    # def settings(self, **kw):
+    #     """
+    #     This method showcases how you can use the same controller
+    #     for a data page and a display page.
+    #     """
+    #     return dict(page='settings', params=kw)
 
     @expose('fortress.templates.index')
     @require(predicates.has_permission('administration', msg=l_('Only for administrators')))

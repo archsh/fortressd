@@ -1,14 +1,8 @@
-{% extends "master.jinja" %}
-
-{% block master_title %}
-    Welcome to {{ tmpl_context.project_name|default('FORTRESSD') }}
-{% endblock %}
-
-
-{% block contents %}
-    <div class="row">
-        <div class="col-md-12">
-            <h1><i class="fa fa-server"></i> Infrastructures </h1>
+{% extends "infrastructures/master.jinja" %}
+{% block page_content %}
+        <div class="row">
+            <div class="col-md-12">
+                <h1>User Profile</h1>
+            </div>
         </div>
-    </div>
 {% endblock %}
