@@ -6,29 +6,30 @@
 
 
 {% block contents %}
-    <div class="row">
-    <div class="col-md-12 jumbotron">
-        <div class="media">
-            <div class="media-left">
-                <img class="media-object media-middle" src="{{ tg.url('/img/fortressd_logo_big.png') }}"
-                     alt="Fortressd" height="120" width="120"/>
-            </div>
-            <div class="media-body">
-                <h2>Welcome to {{ tmpl_context.project_name|default('FORTRESSD') }}
-                    <small>v1.0</small>
-                </h2>
-                <p>If you see this page it means your installation was successful!</p>
-                <p></p>
-                <p>
-                    <a class="btn btn-primary pull-right" href="{{ tg.url('/about') }}" >
-                        {{ h.icon('book') }} Learn more
-                    </a>
-                </p>
+    <div class="row-fluid">
+        <div class="col-md-12 jumbotron">
+            <div class="media">
+                <div class="media-left">
+                    <img class="media-object media-middle" src="{{ tg.url('/img/fortressd_logo_big.png') }}"
+                         alt="Fortressd" height="120" width="120"/>
+                </div>
+                <div class="media-body">
+                    <h2>Welcome to {{ tmpl_context.project_name|default('FORTRESSD') }}
+                        <small>v1.0</small>
+                    </h2>
+                    <p>If you see this page it means your installation was successful!</p>
+                    <p></p>
+                    <p>
+                        <a class="btn btn-primary pull-right" href="{{ tg.url('/about') }}">
+                            {{ h.icon('book') }} Learn more
+                        </a>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row-fluid">
         <div class="col-md-3">
             <h4><i class="fa fa-server"></i> Infrastructure management</h4>
             <ul class="">
@@ -41,7 +42,7 @@
         </div>
 
         <div class="col-md-3">
-            <h4><i class="fa fa-users>"></i> User and group management</h4>
+            <h4><i class="fa fa-users"></i> User and group management</h4>
             <ul class="">
                 <li class="">Cras justo odio</li>
                 <li class="">Dapibus ac facilisis in</li>
@@ -72,10 +73,10 @@
             </ul>
         </div>
     </div>
-    <div class="row">
+
+    <div class="row-fluid">
         <div class="col-md-12">
-            <em class="pull-right small"> Thank you for
-                choosing {{ tmpl_context.project_name|default('FORTRESSD') }}.</em>
+
         </div>
 
     </div>

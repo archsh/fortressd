@@ -5,22 +5,25 @@
 {% endblock %}
 
 {% block contents %}
-    <div class="row">
-    <div class="media">
-        <div class="media-left">
-            <img class="media-object media-middle" src="{{ tg.url('/img/fortressd_logo_big.png') }}"
-                 alt="Fortressd" height="120" width="120"/>
-        </div>
-        <div class="media-body">
-            <h2>About {{ tmpl_context.project_name|default('FORTRESSD') }}
-                <small>v1.0</small>
-            </h2>
-            <p>This file is for you to describe the fortressd application. Typically
-                you would include information such as the information below:</p>
+    <div class="row-fluid">
+        <div class="col-md-12">
+            <div class="media">
+                <div class="media-left">
+                    <img class="media-object media-middle" src="{{ tg.url('/img/fortressd_logo_big.png') }}"
+                         alt="Fortressd" height="120" width="120"/>
+                </div>
+                <div class="media-body">
+                    <h2>About {{ tmpl_context.project_name|default('FORTRESSD') }}
+                        <small>v1.0</small>
+                    </h2>
+                    <p>This file is for you to describe the fortressd application. Typically
+                        you would include information such as the information below:</p>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="row">
+    <div class="row-fluid">
         <div class="col-md-12">
             <h2>Installation and Setup</h2>
             <p>Install <code>fortressd</code> using the setup.py script::</p>
