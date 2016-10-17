@@ -1,16 +1,12 @@
-{% extends "master.jinja" %}
-
-{% block master_title %}
-    Welcome to {{ tmpl_context.project_name|default('FORTRESSD') }}
-{% endblock %}
-
-
+{% extends "users/master.jinja" %}
 {% block contents %}
     <div class="row">
         <div class="col-md-12">
-            <div class="media">
-                <h1><i class="fa fa-users"></i> User Management </h1>
-            </div>
+            <ol class="breadcrumb">
+                <li><a href="/">Home</a></li>
+                <li><a href="/management">Management</a></li>
+                <li class="active">Data Centers</li>
+            </ol>
         </div>
     </div>
 {% endblock %}
