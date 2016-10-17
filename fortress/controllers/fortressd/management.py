@@ -38,3 +38,8 @@ class ManagementController(BaseController):
         """Handle the front-page."""
         return dict(page='index')
 
+    @expose('fortress.templates.management.authorizations')
+    def authorizations(self):
+        """Handle the front-page."""
+        return dict(page='index')
+
