@@ -30,9 +30,19 @@ class RequestController(BaseController):
         """Handle the front-page."""
         return dict(page='index')
 
+    @expose('fortress.templates.request.index')
+    def new(self):
+        """Handle the front-page."""
+        return dict(page='index')
+
 
 class TerminalController(BaseController):
     @expose('fortress.templates.terminal.index')
     def index(self):
+        """Handle the front-page."""
+        return dict(page='index')
+
+    @expose('fortress.templates.terminal.index')
+    def new(self):
         """Handle the front-page."""
         return dict(page='index')

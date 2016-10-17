@@ -22,3 +22,13 @@ class HistoryController(BaseController):
         """Handle the front-page."""
         return dict(page='index')
 
+    @expose('fortress.templates.histories.index')
+    def activities(self):
+        """Handle the front-page."""
+        return dict(page='index')
+
+    @expose('fortress.templates.histories.index')
+    def alerts(self):
+        """Handle the front-page."""
+        return dict(page='index')
+

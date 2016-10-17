@@ -41,52 +41,117 @@
             </button>
             {% block navbar_brand %}
                 <a class="navbar-brand" href="{{ tg.url('/') }}">
+                <i class="fa fa-gear fa-spin"></i>
                     {{ tmpl_context.project_name|default('FORTRESSD') }}
                 </a>
             {% endblock %}
         </div>
         <div id="navbar" class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-                {% block navbar_menu %}
+
                     {% if tg.auth_stack_enabled and request.identity %}
-                        <li><a href="{{ tg.url('/request') }}"><i class="fa fa-wpforms"></i> {% trans %}
-                            Request{% endtrans %}</a></li>
-                        <li><a href="{{ tg.url('/history') }}"><i class="fa fa-history"></i> {% trans %}
-                            History{% endtrans %}</a></li>
-                        <li><a href="{{ tg.url('/terminal') }}"><i class="fa fa-terminal"></i> {% trans %}
-                            Terminal{% endtrans %}</a></li>
+                        <li {% if request.path[:8] == '/request' %}class="active"{% endif %}><a href="{{ tg.url('/request') }}" class="dropdown-toggle" data-toggle="dropdown"
+                               role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false"><i class="fa fa-wpforms"></i> {% trans %}
+                            Request{% endtrans %} <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li {% if request.path == '/request/new' %}class="active"{% endif %}>
+                                    <a href="/request/new"><i class="fa fa-plus-square"></i> New Request</a>
+                                </li>
+                                <li {% if request.path == '/request/history' %}class="active"{% endif %}>
+                                    <a href="/request/history"><i class="fa fa-history"></i> Request History</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li {% if request.path[:8] == '/history' %}class="active"{% endif %}><a href="{{ tg.url('/history') }}" class="dropdown-toggle" data-toggle="dropdown"
+                               role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false"><i class="fa fa-history"></i> {% trans %}
+                            History{% endtrans %} <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li {% if request.path == '/history/activities' %}class="active"{% endif %}>
+                                    <a href="/history/activities"><i class="fa fa-bar-chart"></i> Activities</a>
+                                </li>
+                                <li {% if request.path == '/history/alerts' %}class="active"{% endif %}>
+                                    <a href="/history/alerts"><i class="fa fa-warning"></i> Alerts</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li {% if request.path[:9] == '/terminal' %}class="active"{% endif %}><a href="{{ tg.url('/terminal') }}" class="dropdown-toggle" data-toggle="dropdown"
+                               role="button"
+                               aria-haspopup="true"
+                               aria-expanded="false"><i class="fa fa-terminal"></i> {% trans %}
+                            Terminal{% endtrans %} <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li {% if request.path == '/terminal/new' %}class="active"{% endif %}>
+                                    <a href="/terminal/new"><i class="fa fa-plus-square"></i> New Request</a>
+                                </li>
+                                <li {% if request.path == '/terminal/history' %}class="active"{% endif %}>
+                                    <a href="/terminal/history"><i class="fa fa-history"></i> Request History</a>
+                                </li>
+                            </ul>
+                        </li>
                         {% if request.identity and 'administration' in request.identity.permissions %}
-                            <li><a href="{{ tg.url('/management') }}"><i class="fa fa-legal"></i> {% trans %}
-                                Management{% endtrans %}</a></li>
-                            <li><a href="{{ tg.url('/settings') }}"><i class="fa fa-gears"></i> {% trans %}
-                                Settings{% endtrans %}</a></li>
+                            <li {% if request.path[:11] == '/management' %}class="active"{% endif %}>
+                                <a href="{{ tg.url('/management') }}" class="dropdown-toggle" data-toggle="dropdown"
+                                   role="button"
+                                   aria-haspopup="true"
+                                   aria-expanded="false"><i class="fa fa-legal"></i> {% trans %}
+                                Management{% endtrans %} <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li {% if request.path == '/management/data_centers' %}class="active"{% endif %}>
+                                        <a href="/management/data_centers"><i class="fa fa-building"></i> Data
+                                            Centers</a>
+                                    </li>
+                                    <li {% if request.path == '/management/data_servers' %}class="active"{% endif %}>
+                                        <a href="/management/data_servers"><i class="fa fa-server"></i> Servers</a>
+                                    </li>
+                                    <li {% if request.path == '/management/users' %}class="active"{% endif %}>
+                                        <a href="/management/users"><i class="fa fa-users"></i> Users</a>
+                                    </li>
+                                    <li {% if request.path == '/management/authorizations' %}class="active"{% endif %}>
+                                        <a href="/management/authorizations"><i class="fa fa-check-square-o"></i>
+                                            Authorizations</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li {% if request.path[:9] == '/settings' %}class="active"{% endif %}><a href="{{ tg.url('/settings') }}"><i class="fa fa-gears"></i> {% trans %}
+                                Settings{% endtrans %}</a>
+                            </li>
                         {% endif %}
                     {% endif %}
+            <!--
+                {% block navbar_menu %}
                 {% endblock %}
                 {% if not hide_back %}
                     <li>
                         <a href="/"><i class="fa fa-reply"></i> Back </a>
                     </li>
                 {% endif %}
+            -->
             </ul>
             {% if tg.auth_stack_enabled %}
                 <ul class="nav navbar-nav navbar-right">
                     {% if request.identity %}
-                        <li class="dropdown">
+                        <li {% if request.path[:8] == '/profile' %}class="active"{% endif %}>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"
                                aria-haspopup="true"
                                aria-expanded="false"><i class="fa fa-user"></i> {{ request.identity.user.display_name }}
-                                <span
-                                        class="caret"></span></a>
+                                <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li {% if request.path == '/profile' %}class="active"{% endif %}>
                                     <a href="/profile"><i class="fa fa-user"></i> About me</a>
                                 </li>
                                 <li {% if request.path == '/profile/change_passwd' %}class="active"{% endif %}>
-                                    <a href="/profile/change_passwd"><i class="fa fa-key"></i> Change Password</a>
+                                    <a href="/profile/change_passwd"><i class="fa fa-user-secret"></i> Change
+                                        Password</a>
                                 </li>
                                 <li {% if request.path == '/profile/edit_info' %}class="active"{% endif %}>
                                     <a href="/profile/edit_info"><i class="fa fa-edit"></i> Edit Profile</a>
+                                </li>
+                                <li {% if request.path == '/profile/ssh_key' %}class="active"{% endif %}>
+                                    <a href="/profile/ssh_key"><i class="fa fa-key"></i> SSH Key</a>
                                 </li>
                             </ul>
                         </li>

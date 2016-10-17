@@ -1,18 +1,1 @@
 {% extends "master.jinja" %}
-{% block navbar_brand %}
-    <a href="/management" class="navbar-brand"><i class="fa fa-legal"></i> Management </a>
-{% endblock %}
-{% block navbar_menu %}
-    <li {% if request.path == '/management/data_centers' %}class="active"{% endif %}>
-        <a href="/management/data_centers"><i class="fa fa-building"></i> Data Centers</a>
-    </li>
-    <li {% if request.path == '/management/data_servers' %}class="active"{% endif %}>
-        <a href="/management/data_servers"><i class="fa fa-server"></i> Servers</a>
-    </li>
-    <li {% if request.path == '/management/users' %}class="active"{% endif %}>
-        <a href="/management/users"><i class="fa fa-users"></i> Users</a>
-    </li>
-    <li {% if request.path == '/management/authorizations' %}class="active"{% endif %}>
-        <a href="/management/authorizations"><i class="fa fa-check-square-o"></i> Authorizations</a>
-    </li>
-{% endblock %}
