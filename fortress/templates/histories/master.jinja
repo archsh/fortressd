@@ -1,12 +1,12 @@
 {% extends "master.jinja" %}
 {% block navbar_brand %}
-    <a href="/histories" class="navbar-brand"><i class="fa fa-bar-chart"></i> Histories </a>
+    <a href="/histories" class="navbar-brand"><i class="fa fa-history"></i> Histories </a>
 {% endblock %}
 {% block navbar_menu %}
     <li>
-        <a href="/profile/change_passwd"><i class="fa fa-key"></i> Change Password</a>
+        <a href="/histories/activities"><i class="fa fa-bar-chart"></i> Activities</a>
     </li>
     <li>
-        <a href="/profile/edit_info"><i class="fa fa-key"></i> Edit Profile</a>
+        <a href="/histories/alerts"><i class="fa fa-warning"></i> Alerts</a>
     </li>
 {% endblock %}
