@@ -5,7 +5,8 @@
 {% endblock %}
 
 {% block contents %}
-    <h1>Error {{ code }}</h1>
+    <div class="col-md-8 col-lg-8 col-md-offset-2 col-lg-offset-2">
+    <h1 class="text-center">Error {{ code }}</h1>
 
     <?python
 import re
@@ -14,5 +15,6 @@ def fixmessage(message):
     return mf.sub(r'\1noscript', message)
 ?>
     <div>{{ message|safe }}</div>
+    </div>
 
 {% endblock %}
