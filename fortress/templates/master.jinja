@@ -53,14 +53,14 @@
                         <li {% if request.path[:15] == '/authorizations' %}class="active"{% endif %}><a href="{{ tg.url('/authorizations') }}" class="dropdown-toggle" data-toggle="dropdown"
                                role="button"
                                aria-haspopup="true"
-                               aria-expanded="false"><i class="fa fa-key"></i> {% trans %}
+                               aria-expanded="false"><i class="fa fa-shield"></i> {% trans %}
                             Authorizations{% endtrans %} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li {% if request.path == '/authorizations/request' %}class="active"{% endif %}>
                                     <a href="/authorizations/request"><i class="fa fa-plus-square"></i> New Request</a>
                                 </li>
                                 <li {% if request.path == '/authorizations/approved' %}class="active"{% endif %}>
-                                    <a href="/authorizations/approved"><i class="fa fa-user-times"></i> Approved</a>
+                                    <a href="/authorizations/approved"><i class="fa fa-key"></i> Approved</a>
                                 </li>
                                 <li {% if request.path == '/authorizations/history' %}class="active"{% endif %}>
                                     <a href="/authorizations/history"><i class="fa fa-history"></i> Request History</a>
