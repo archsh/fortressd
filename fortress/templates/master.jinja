@@ -50,31 +50,20 @@
             <ul class="nav navbar-nav">
 
                     {% if tg.auth_stack_enabled and request.identity %}
-                        <li {% if request.path[:8] == '/request' %}class="active"{% endif %}><a href="{{ tg.url('/request') }}" class="dropdown-toggle" data-toggle="dropdown"
+                        <li {% if request.path[:15] == '/authorizations' %}class="active"{% endif %}><a href="{{ tg.url('/authorizations') }}" class="dropdown-toggle" data-toggle="dropdown"
                                role="button"
                                aria-haspopup="true"
-                               aria-expanded="false"><i class="fa fa-wpforms"></i> {% trans %}
-                            Request{% endtrans %} <span class="caret"></span></a>
+                               aria-expanded="false"><i class="fa fa-key"></i> {% trans %}
+                            Authorizations{% endtrans %} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li {% if request.path == '/request/new' %}class="active"{% endif %}>
-                                    <a href="/request/new"><i class="fa fa-plus-square"></i> New Request</a>
+                                <li {% if request.path == '/authorizations/request' %}class="active"{% endif %}>
+                                    <a href="/authorizations/request"><i class="fa fa-plus-square"></i> New Request</a>
                                 </li>
-                                <li {% if request.path == '/request/history' %}class="active"{% endif %}>
-                                    <a href="/request/history"><i class="fa fa-history"></i> Request History</a>
+                                <li {% if request.path == '/authorizations/approved' %}class="active"{% endif %}>
+                                    <a href="/authorizations/approved"><i class="fa fa-user-times"></i> Approved</a>
                                 </li>
-                            </ul>
-                        </li>
-                        <li {% if request.path[:8] == '/history' %}class="active"{% endif %}><a href="{{ tg.url('/history') }}" class="dropdown-toggle" data-toggle="dropdown"
-                               role="button"
-                               aria-haspopup="true"
-                               aria-expanded="false"><i class="fa fa-history"></i> {% trans %}
-                            History{% endtrans %} <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li {% if request.path == '/history/activities' %}class="active"{% endif %}>
-                                    <a href="/history/activities"><i class="fa fa-bar-chart"></i> Activities</a>
-                                </li>
-                                <li {% if request.path == '/history/alerts' %}class="active"{% endif %}>
-                                    <a href="/history/alerts"><i class="fa fa-warning"></i> Alerts</a>
+                                <li {% if request.path == '/authorizations/history' %}class="active"{% endif %}>
+                                    <a href="/authorizations/history"><i class="fa fa-history"></i> Request History</a>
                                 </li>
                             </ul>
                         </li>
@@ -113,6 +102,12 @@
                                     <li {% if request.path == '/management/authorizations' %}class="active"{% endif %}>
                                         <a href="/management/authorizations"><i class="fa fa-check-square-o"></i>
                                             Authorizations</a>
+                                    </li>
+                                    <li {% if request.path == '/management/activities' %}class="active"{% endif %}>
+                                        <a href="/management/activities"><i class="fa fa-bar-chart"></i> Activities</a>
+                                    </li>
+                                    <li {% if request.path == '/management/alerts' %}class="active"{% endif %}>
+                                        <a href="/management/alerts"><i class="fa fa-warning"></i> Alerts</a>
                                     </li>
                                 </ul>
                             </li>

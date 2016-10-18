@@ -50,8 +50,7 @@ class RootController(BaseController):
 
     error = ErrorController()
     profile = ProfileController()
-    request = RequestController()
-    history = HistoryController()
+    authorizations = AuthorizationController()
     terminal = TerminalController()
     management = ManagementController()
     settings = SettingController()

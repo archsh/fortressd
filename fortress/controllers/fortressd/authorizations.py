@@ -22,3 +22,18 @@ class AuthorizationController(BaseController):
         """Handle the front-page."""
         return dict(page='index')
 
+    @expose('fortress.templates.authorizations.index')
+    def request(self):
+        """Handle the front-page."""
+        return dict(page='index')
+
+    @expose('fortress.templates.authorizations.index')
+    def history(self):
+        """Handle the front-page."""
+        return dict(page='index')
+
+    @expose('fortress.templates.authorizations.index')
+    def approved(self):
+        """Handle the front-page."""
+        return dict(page='index')
+

@@ -7,6 +7,7 @@ from tg.i18n import ugettext as _, lazy_ugettext as l_
 from tg.exceptions import HTTPFound
 from tg import predicates
 from fortress import model
+from histories import HistoryController
 
 from fortress.lib.base import BaseController
 
@@ -14,6 +15,7 @@ from fortress.lib.base import BaseController
 class ManagementController(BaseController):
     # Uncomment this line if your controller requires an authenticated user
     allow_only = predicates.has_permission('administration', msg=l_('Only for administrators'))
+    history = HistoryController()
 
     def _before(self, *args, **kw):
         tmpl_context.page_name = "Fortressd"
