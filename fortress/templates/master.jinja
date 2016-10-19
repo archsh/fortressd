@@ -34,7 +34,7 @@
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
                     aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
+                <span class="sr-only">{% trans %}Toggle navigation{% endtrans %}</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -53,8 +53,7 @@
                         <li {% if request.path[:15] == '/authorizations' %}class="active"{% endif %}><a href="{{ tg.url('/authorizations') }}" class="dropdown-toggle" data-toggle="dropdown"
                                role="button"
                                aria-haspopup="true"
-                               aria-expanded="false"><i class="fa fa-shield"></i> {% trans %}
-                            Authorizations{% endtrans %} <span class="caret"></span></a>
+                               aria-expanded="false"><i class="fa fa-shield"></i> {% trans %}Authorizations{% endtrans %} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li {% if request.path == '/authorizations/request' %}class="active"{% endif %}>
                                     <a href="/authorizations/request"><i class="fa fa-plus-square"></i> New Request</a>
@@ -70,8 +69,8 @@
                         <li {% if request.path[:9] == '/terminal' %}class="active"{% endif %}><a href="{{ tg.url('/terminal') }}" class="dropdown-toggle" data-toggle="dropdown"
                                role="button"
                                aria-haspopup="true"
-                               aria-expanded="false"><i class="fa fa-terminal"></i> {% trans %}
-                            Terminal{% endtrans %} <span class="caret"></span></a>
+                               aria-expanded="false"><i class="fa fa-terminal"></i>
+                            {% trans %}Terminal{% endtrans %} <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li {% if request.path == '/terminal/new' %}class="active"{% endif %}>
                                     <a href="/terminal/new"><i class="fa fa-plus-square"></i> New Request</a>
@@ -86,8 +85,7 @@
                                 <a href="{{ tg.url('/management') }}" class="dropdown-toggle" data-toggle="dropdown"
                                    role="button"
                                    aria-haspopup="true"
-                                   aria-expanded="false"><i class="fa fa-legal"></i> {% trans %}
-                                Management{% endtrans %} <span class="caret"></span></a>
+                                   aria-expanded="false"><i class="fa fa-legal"></i> {% trans %}Management{% endtrans %} <span class="caret"></span></a>
                                 <ul class="dropdown-menu">
                                     <li {% if request.path == '/management/data_centers' %}class="active"{% endif %}>
                                         <a href="/management/data_centers"><i class="fa fa-building"></i> Data
@@ -111,8 +109,8 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li {% if request.path[:9] == '/settings' %}class="active"{% endif %}><a href="{{ tg.url('/settings') }}"><i class="fa fa-gears"></i> {% trans %}
-                                Settings{% endtrans %}</a>
+                            <li {% if request.path[:9] == '/settings' %}class="active"{% endif %}><a href="{{ tg.url('/settings') }}"><i class="fa fa-gears"></i>
+                                {% trans %}Settings{% endtrans %}</a>
                             </li>
                         {% endif %}
                     {% endif %}
@@ -150,11 +148,11 @@
                                 </li>
                             </ul>
                         </li>
-                        <li><a href="{{ tg.url('/logout_handler') }}"><i class="fa fa-sign-out"></i> {% trans %}
-                            Logout{% endtrans %}</a></li>
+                        <li><a href="{{ tg.url('/logout_handler') }}"><i class="fa fa-sign-out"></i>
+                            {% trans %}Logout{% endtrans %}</a></li>
                     {% else %}
-                        <li><a href="{{ tg.url('/login') }}"><i class="fa fa-sign-in"></i> {% trans %}
-                            Login{% endtrans %}</a></li>
+                        <li><a href="{{ tg.url('/login') }}"><i class="fa fa-sign-in"></i>
+                            {% trans %}Login{% endtrans %}</a></li>
                     {% endif %}
                 </ul>
             {% endif %}
@@ -172,14 +170,16 @@
         </div>
     {% endwith %}
 
+
     {% block contents %}
+
     {% endblock %}
 </div>
 
 <!-- Footer -->
 <footer class="footer hidden-xs hidden-sm">
     <p class="text-center"><i class="fa fa-terminal"></i>
-        Copyright &copy; {{ tmpl_context.project_name|default('FORTRESSD') }} {{ h.current_year() }}</p>
+        {% trans %}Copyright &copy;{% endtrans %} {{ tmpl_context.project_name|default('FORTRESSD') }} {{ h.current_year() }}</p>
 </footer>
 
 </body>

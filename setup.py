@@ -54,7 +54,6 @@ if py_version == (3, 2):
     install_requires.append('jinja2 < 2.7')
 else:
     install_requires.append('jinja2')
-
 setup(
     name='fortressd',
     version='0.1',
@@ -74,8 +73,7 @@ setup(
     ]},
     message_extractors={'fortress': [
         ('**.py', 'python', None),
-        ('templates/**.xhtml', 'kajiki', None),
-        ('templates/**.jinja', 'jinja2', None),
+        ('templates/**.jinja', 'jinja2', {'silent': 'false', 'extensions': 'jinja2.ext.autoescape,jinja2.ext.with_'}),
         ('public/**', 'ignore', None)
     ]},
     entry_points={

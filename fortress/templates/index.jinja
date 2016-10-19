@@ -1,7 +1,7 @@
 {% extends "master.jinja" %}
 
 {% block master_title %}
-    Welcome to {{ tmpl_context.project_name|default('FORTRESSD') }}
+    {% trans %}Welcome to {% endtrans %}{{ tmpl_context.project_name|default('FORTRESSD') }}
 {% endblock %}
 {% set hide_back=True %}
 
@@ -17,7 +17,7 @@
                     <h2>Welcome to {{ tmpl_context.project_name|default('FORTRESSD') }}
                         <small>v1.0</small>
                     </h2>
-                    <p>If you see this page it means your installation was successful!</p>
+                    <p>{% trans %}If you see this page it means your installation was successful!{% endtrans %}</p>
                     <p></p>
                     <p>
                         <a class="btn btn-primary pull-right" href="{{ tg.url('/about') }}">

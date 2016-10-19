@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fortressd 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-13 16:59+0800\n"
+"POT-Creation-Date: 2016-10-19 13:59+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,36 +17,37 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 2.3.4\n"
 
-#: fortress/controllers/root.py:50
+#: fortress/controllers/root.py:59
 msgid "FORTRESSD"
 msgstr ""
 
-#: fortress/controllers/root.py:78
+#: fortress/controllers/fortressd/management.py:17
+#: fortress/controllers/fortressd/settings.py:16 fortress/controllers/root.py:89
 msgid "Only for administrators"
 msgstr ""
 
-#: fortress/controllers/root.py:84
+#: fortress/controllers/root.py:95
 msgid "Only for the operators"
 msgstr ""
 
-#: fortress/controllers/root.py:94
+#: fortress/controllers/root.py:105
 msgid "User not found"
 msgstr ""
 
-#: fortress/controllers/root.py:96
+#: fortress/controllers/root.py:107
 msgid "Invalid Password"
 msgstr ""
 
-#: fortress/controllers/root.py:100
+#: fortress/controllers/root.py:111
 msgid "Wrong credentials"
 msgstr ""
 
-#: fortress/controllers/root.py:119
+#: fortress/controllers/root.py:130
 #, python-format
 msgid "Welcome back, %s!"
 msgstr ""
 
-#: fortress/controllers/root.py:132
+#: fortress/controllers/root.py:143
 msgid "We hope to see you soon!"
 msgstr ""
 
@@ -56,5 +57,45 @@ msgstr ""
 
 #: fortress/controllers/secure.py:24
 msgid "Secure Controller here"
+msgstr ""
+
+#: fortress/templates/index.jinja:4
+msgid "Welcome to "
+msgstr ""
+
+#: fortress/templates/index.jinja:20
+msgid "If you see this page it means your installation was successful!"
+msgstr ""
+
+#: fortress/templates/master.jinja:37
+msgid "Toggle navigation"
+msgstr ""
+
+#: fortress/templates/master.jinja:56
+msgid "Authorizations"
+msgstr ""
+
+#: fortress/templates/master.jinja:73
+msgid "Terminal"
+msgstr ""
+
+#: fortress/templates/master.jinja:88
+msgid "Management"
+msgstr ""
+
+#: fortress/templates/master.jinja:113
+msgid "Settings"
+msgstr ""
+
+#: fortress/templates/master.jinja:152
+msgid "Logout"
+msgstr ""
+
+#: fortress/templates/master.jinja:155
+msgid "Login"
+msgstr ""
+
+#: fortress/templates/master.jinja:182
+msgid "Copyright &copy;"
 msgstr ""
 
