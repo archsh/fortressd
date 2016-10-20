@@ -73,7 +73,7 @@ setup(
     ]},
     message_extractors={'fortress': [
         ('**.py', 'python', None),
-        ('templates/**.jinja', 'jinja2', {'silent': 'false', 'extensions': 'jinja2.ext.autoescape,jinja2.ext.with_'}),
+        ('templates/**.jinja', 'jinja2', {'silent': 'true', 'extensions': 'jinja2.ext.autoescape,jinja2.ext.with_'}),
         ('public/**', 'ignore', None)
     ]},
     entry_points={

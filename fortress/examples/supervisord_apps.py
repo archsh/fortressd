@@ -3,7 +3,18 @@ import sys
 TEMPLATE = '''[program:ssh_%(loc)s_%(suffix)03d]
 command=sshpass -p 'Aipu@admin#@!' ssh -N -L0.0.0.0:4%(loc)d%(suffix)03d:%(ip)s:%(port)d tvsee@localhost -p30022
 autostart=true
-autorestart=true'''
+autorestart=true
+stdout_logfile=/var/log/supervisor/ssh_%(loc)s_%(suffix)03d_stdout.log       ; stdout log path, NONE for none; default AUTO
+stdout_logfile_maxbytes=1MB   ; max # logfile bytes b4 rotation (default 50MB)
+stdout_logfile_backups=10     ; # of stdout logfile backups (default 10)
+stdout_capture_maxbytes=1MB   ; number of bytes in 'capturemode' (default 0)
+stdout_events_enabled=false   ; emit events on stdout writes (default false)
+stderr_logfile=/var/log/supervisor/ssh_%(loc)s_%(suffix)03d_stderr.log       ; stderr log path, NONE for none; default AUTO
+stderr_logfile_maxbytes=1MB   ; max # logfile bytes b4 rotation (default 50MB)
+stderr_logfile_backups=10     ; # of stderr logfile backups (default 10)
+stderr_capture_maxbytes=1MB   ; number of bytes in 'capturemode' (default 0)
+stderr_events_enabled=false   ; emit events on stderr writes (default false)
+'''
 
 CHENGDU_SERVERS = '''10.235.1.26
 10.255.199.10
@@ -116,7 +127,9 @@ KUNMING_SERVERS = '''101.36.101.20
 101.36.101.54
 101.36.101.55
 101.36.101.56
-101.36.101.57'''
+101.36.101.57
+101.36.101.58
+101.36.101.59'''
 
 CHONGQING_SERVERS = '''101.36.99.124
 101.36.99.125

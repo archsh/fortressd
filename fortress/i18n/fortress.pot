@@ -8,21 +8,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: fortressd 0.1\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2016-10-19 13:59+0800\n"
+"POT-Creation-Date: 2016-10-19 14:09+0800\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Generated-By: Babel 2.3.4\n"
+"Generated-By: Babel 2.1.1\n"
 
 #: fortress/controllers/root.py:59
 msgid "FORTRESSD"
 msgstr ""
 
-#: fortress/controllers/fortressd/management.py:17
-#: fortress/controllers/fortressd/settings.py:16 fortress/controllers/root.py:89
+#: fortress/controllers/root.py:89 fortress/controllers/fortressd/management.py:17
+#: fortress/controllers/fortressd/settings.py:16
 msgid "Only for administrators"
 msgstr ""
 
